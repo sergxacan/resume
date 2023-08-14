@@ -1,0 +1,94 @@
+<div>
+  <section class='person'>
+    <h1>{{person.name}}</h1>
+    <h2>{{person.age}} {{person.gender}}</h2>
+    <address>
+      {{person.address.street}}
+      <br />
+      {{person.address.city}}<br />
+      {{person.address.state}}<br />
+      {{person.address.zip}}<br />
+      {{person.address.country}}<br />
+    </address>
+  </section>
+  <hr />
+  <section class='education'>
+    <h2>Education</h2>
+    {{#each person.education}}
+      <div>
+        <h3>{{degree}}</h3>
+        <p>{{major}}</p>
+        <p>{{university}}
+          (graduation year
+          {{graduationYear}})</p>
+      </div>
+    {{/each}}
+  </section>
+  <hr />
+  <section class='work-experience'>
+    <h2>Work Experience</h2>
+    {{#each person.workExperience}}
+      <div>
+        <h3>{{company}}</h3>
+        <p>{{title}} ({{startDate}} - {{endDate}})</p>
+        <p>{{responsibilities}}</p>
+        <p>Year founded: {{year_founded}}</p>
+        <p>Industry: "{{industry}}"</p>
+        {{#each employees}}
+          <section class='employee'>
+            <h4>{{name}}</h4>
+            <p>{{position}}</p>
+            <p>Department: {{department}}</p>
+            {{#each projects}}
+              <section class='project'>
+                <h4>{{name}}</h4>
+                <p>Description: {{description}}</p>
+                <p>Status: {{status}}</p>
+                <p>Department: {{department}}</p>
+                {{#each teams}}
+                  <section class='team'>
+                    <h4>{{team_name}}</h4>
+                    <section class='team-leader'>
+                      <h4>Team leader:
+                        {{team_leader.name}}</h4>
+                      <p>Title: {{team_leader.title}}</p>
+                      <address>
+                        {{team_leader.email}}
+                      </address>
+                    </section>
+                    {{#each team_members}}
+                      <section class='team-member'>
+                        <h4>Team member: {{name}}</h4>
+                        <p>Title: {{title}}</p>
+                        <address>{{email}}</address>
+                        <p>Skills: {{skills}}</p>
+                        {{#each projects}}
+                          <section class='projects'>
+                            <h4>Projects: {{name}}</h4>
+                            <p>
+                              Description:
+                              {{description}}</p>
+                            <p>
+                              Technologies:
+                              {{technologies}}
+                            </p>
+                          </section>
+                          {{#each team_members}}
+                            <section class='team-member'>
+                              <h4>Team member: {{name}}</h4>
+                              <p>{{title}}</p>
+                            </section>
+                          {{/each}}
+                        {{/each}}
+                      </section>
+                    {{/each}}
+                  </section>
+                {{/each}}
+              </section>
+            {{/each}}
+          </section>
+        {{/each}}
+      </div>
+    {{/each}}
+  </section>
+</div>
