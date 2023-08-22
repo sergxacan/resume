@@ -152,7 +152,7 @@ router.get('/education', function (req, res) {
       certificates: [
         { name: 'Атестат', id: 345 },
         { name: 'Диплом', id: 2337 },
-        { name: 'Сертифікат', id: 0000 },
+        { name: 'Сертифікат', id: 3241 },
       ],
     },
 
