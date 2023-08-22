@@ -1,0 +1,79 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+
+  <section class='excursion'>
+    <h1>{{program.excursion.name}}</h1>
+    <p>Location:
+      {{program.excursion.location.city}},
+      {{program.excursion.location.country}}</p>
+    <p>Date: {{program.excursion.date}}</p>
+  </section>
+
+  <hr />
+
+  <section class='program-details'>
+    {{#each program.excursion.program}}
+      <div>
+        <h2>{{name}}</h2>
+        <p>Type: {{type}}</p>
+        <p>Duration: {{duration}} hours</p>
+        {{#if details.museum}}
+          <section class='museum-details'>
+            <h3>Museum Details</h3>
+            <p>Museum: {{details.museum.name}}</p>
+            <p>Address:
+              {{details.museum.location.address}},
+              {{details.museum.location.city}},
+              {{details.museum.location.country}}</p>
+            {{#each details.museum.exhibits}}
+              <section class='exhibit'>
+                <h4>{{name}}</h4>
+                <p>Artist: {{artist}}</p>
+                <p>Description: {{description}}</p>
+                <p>Audio Guide: {{audio_guide}}</p>
+              </section>
+            {{/each}}
+          </section>
+          <section class='guide-details'>
+            <h3>Guide Details</h3>
+            <p>Guide: {{details.guide.name}}</p>
+            <p>Language: {{details.guide.language}}</p>
+            <p>Rating: {{details.guide.rating}}</p>
+          </section>
+        {{/if}}
+        {{#if details.venue}}
+          <section class='venue-details'>
+            <h3>Venue Details</h3>
+            <p>Venue: {{details.venue.name}}</p>
+            <p>Address:
+              {{details.venue.location.address}},
+              {{details.venue.location.city}},
+              {{details.venue.location.country}}</p>
+            {{#each details.performers}}
+              <section class='performer'>
+                <h4>{{name}}</h4>
+                <p>Type: {{type}}</p>
+              </section>
+            {{/each}}
+          </section>
+          <section class='guide-details'>
+            <h3>Guide Details</h3>
+            <p>Guide: {{details.guide.name}}</p>
+            <p>Language: {{details.guide.language}}</p>
+            <p>Rating: {{details.guide.rating}}</p>
+          </section>
+        {{/if}}
+      </div>
+    {{/each}}
+  </section>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
