@@ -1,0 +1,83 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+<div>
+  <section class='web-languages'>
+    <h1>Web Technologies</h1>
+    {{#each web.languages}}
+      <div>
+        <h2>{{name}}</h2>
+        <p>Version: {{version}}</p>
+        <p>{{description}}</p>
+
+        {{#if elements}}
+          <section class='elements'>
+            <h3>Elements</h3>
+            {{#each elements}}
+              <div>
+                <h4>{{name}}</h4>
+                <p>{{description}}</p>
+                {{#if attributes}}
+                  <section class='attributes'>
+                    <h5>Attributes</h5>
+                    {{#each attributes}}
+                      <p>{{name}}: {{description}}</p>
+                    {{/each}}
+                  </section>
+                {{/if}}
+              </div>
+            {{/each}}
+          </section>
+        {{/if}}
+
+        {{#if properties}}
+          <section class='properties'>
+            <h3>Properties</h3>
+            {{#each properties}}
+              <div>
+                <h4>{{name}}</h4>
+                <p>{{description}}</p>
+                {{#if values}}
+                  <section class='values'>
+                    <h5>Values</h5>
+                    {{#each values}}
+                      <p>{{value}}: {{description}}</p>
+                    {{/each}}
+                  </section>
+                {{/if}}
+              </div>
+            {{/each}}
+          </section>
+        {{/if}}
+
+        {{#if functions}}
+          <section class='functions'>
+            <h3>Functions</h3>
+            {{#each functions}}
+              <div>
+                <h4>{{name}}</h4>
+                <p>{{description}}</p>
+                {{#if parameters}}
+                  <section class='parameters'>
+                    <h5>Parameters</h5>
+                    {{#each parameters}}
+                      <p>{{name}}
+                        ({{type}}):
+                        {{description}}</p>
+                    {{/each}}
+                  </section>
+                {{/if}}
+              </div>
+            {{/each}}
+          </section>
+        {{/if}}
+      </div>
+    {{/each}}
+  </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
