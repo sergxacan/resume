@@ -154,7 +154,6 @@ router.get('/education', function (req, res) {
         { name: 'Диплом', id: 2337 },
 
         { name: 'Сертифікат', id: 4235 },
-
       ],
     },
 
@@ -226,7 +225,8 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',  person: {
+    layout: 'basic',
+    person: {
       name: 'Emma Johnson',
       age: 32,
       gender: 'Female',
@@ -316,16 +316,14 @@ router.get('/person', function (req, res) {
           ],
         },
       ],
-         },
+    },
   })
 })
-
-
 
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'program',
+    layout: 'basic',
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -405,11 +403,11 @@ router.get('/program', function (req, res) {
     },
   })
 })
-=======
+
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: "bio",
+    layout: 'basic',
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
@@ -497,7 +495,9 @@ router.get('/bio', function (req, res) {
         'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
-
+    },
+  })
+})
 
 // ================================================================
 // Підключаємо роутер до бек-енду
