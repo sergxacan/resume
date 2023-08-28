@@ -131,6 +131,8 @@ router.get('/skills', function (req, res) {
   })
 })
 
+// ================================================================
+
 router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
@@ -160,6 +162,8 @@ router.get('/education', function (req, res) {
     footer,
   })
 })
+
+// ================================================================
 
 router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -220,6 +224,8 @@ router.get('/work', function (req, res) {
     footer,
   })
 })
+
+
 // ====================================================
 // Під//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
@@ -320,6 +326,8 @@ router.get('/person', function (req, res) {
   })
 })
 
+// ================================================================
+
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
@@ -403,6 +411,8 @@ router.get('/program', function (req, res) {
     },
   })
 })
+
+// ================================================================
 
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -498,6 +508,8 @@ router.get('/bio', function (req, res) {
     },
   })
 })
+
+// ================================================================
 
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -626,6 +638,8 @@ router.get('/web', function (req, res) {
     },
   })
 })
+
+// ================================================================
 
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
