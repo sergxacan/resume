@@ -1,0 +1,78 @@
+<div>
+  <article>
+    <section class='language-details'>
+      <h1>{{name}} - Overview</h1>
+      <p>{{description}}</p>
+      <p>Year: {{history.year}}</p>
+      <p>Founder: {{history.founder}}</p>
+    </section>
+
+    <hr />
+
+    <section class='language-types'>
+      <h2>Data Types</h2>
+      <ul>
+        {{#each types}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class='language-syntax'>
+      <h2>Syntax</h2>
+      <ul>
+        <li>Variables: {{syntax.variables}}</li>
+        <li>Functions: {{syntax.functions}}</li>
+        <li>Conditionals: {{syntax.conditionals}}</li>
+        <li>Loops: {{syntax.loops}}</li>
+        <li>Classes: {{syntax.classes}}</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class='language-features'>
+      <h2>Features</h2>
+      <ul>
+        {{#each features}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class='language-libraries'>
+      <h2>Libraries</h2>
+      <ul>
+        {{#each libraries}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class='language-tools'>
+      <h2>Tools</h2>
+      <ul>
+        {{#each tools}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <hr />
+
+    <section class='language-community'>
+      <h2>Community Resources</h2>
+      <ul>
+        {{#each community}}
+          <li>{{name}} ({{type}})</li>
+        {{/each}}
+      </ul>
+    </section>
+  </article>
+</div>
