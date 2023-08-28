@@ -1,0 +1,52 @@
+<div>
+  <article>
+    <section class='facebook-details'>
+      <h1>{{name}} Users</h1>
+      {{#each users}}
+        <section class='user'>
+          <h2>{{name}}</h2>
+          <p>Gender: {{gender}}</p>
+          <p>Age: {{age}}</p>
+
+          <h3>Friends</h3>
+          <ul>
+            {{#each friends}}
+              <li>
+                {{name}}
+                ({{gender}}, Age:
+                {{age}})
+                {{#if mutual_friends}}
+                  <ul>
+                    {{#each mutual_friends}}
+                      <li>{{name}}
+                        ({{gender}}, Age:
+                        {{age}})</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+
+          <h3>Groups</h3>
+          <ul>
+            {{#each groups}}
+              <li>
+                {{name}}
+                -
+                {{description}}
+                <ul>
+                  {{#each members}}
+                    <li>{{name}}
+                      ({{gender}}, Age:
+                      {{age}})</li>
+                  {{/each}}
+                </ul>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/each}}
+    </section>
+  </article>
+</div>
