@@ -1,52 +1,82 @@
 <div>
   <article>
-    <section class='facebook-details'>
-      <h1>{{name}} Users</h1>
-      {{#each users}}
-        <section class='user'>
-          <h2>{{name}}</h2>
-          <p>Gender: {{gender}}</p>
-          <p>Age: {{age}}</p>
+          <title>{{name}} - Facebook</title>
+    </head>
+    <body>
+      <h1>{{name}}</h1>
 
-          <h3>Friends</h3>
-          <ul>
-            {{#each friends}}
-              <li>
-                {{name}}
-                ({{gender}}, Age:
-                {{age}})
-                {{#if mutual_friends}}
+      <h2>Users:</h2>
+      <ul>
+        {{#each users}}
+          <li>
+            {{id}}
+            <div> Name: <h3>{{name}}</h3>
+            </div>
+            <p>Gender: {{gender}}</p>
+            <p>Age: {{age}}</p>
+
+            <h4>Friends:</h4>
+            <ul>
+              {{#each friends}}
+                <li>
+                  {{id}}
+                  <div>Name: <h4>{{name}}</h4></div>
+                  <p>Gender: {{gender}}</p>
+                  <p>Age: {{age}}</p>
+
+                  <h4>Mutual Friends:</h4>
                   <ul>
                     {{#each mutual_friends}}
-                      <li>{{name}}
-                        ({{gender}}, Age:
-                        {{age}})</li>
+                      <li>
+                        {{id}}
+                        <div>Name: <h4>{{name}}</h4></div>
+                        <p>Gender: {{gender}}</p>
+                        <p>Age: {{age}}</p>
+                      </li>
+                      <h4>Mutual Friends:</h4>
+                  <ul>
+                    {{#each mutual_friends}}
+                      <li>
+                        {{id}}
+                        <div>Name: <h4>{{name}}</h4></div>
+                        <p>Gender: {{gender}}</p>
+                        <p>Age: {{age}}</p>
+                      </li>
                     {{/each}}
                   </ul>
-                {{/if}}
-              </li>
-            {{/each}}
-          </ul>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+            </ul>
 
-          <h3>Groups</h3>
-          <ul>
-            {{#each groups}}
-              <li>
-                {{name}}
-                -
-                {{description}}
-                <ul>
-                  {{#each members}}
-                    <li>{{name}}
-                      ({{gender}}, Age:
-                      {{age}})</li>
-                  {{/each}}
-                </ul>
-              </li>
-            {{/each}}
-          </ul>
-        </section>
-      {{/each}}
-    </section>
+           
+            <ul>
+              {{#each groups}}
+               <h4>Groups:</h4>
+                <li>
+                  {{id}}
+                  <div>Name: <h4>{{name}}</h4>
+                   </div>
+                  <p>Description: {{description}}</p>
+
+                  <h4>Members:</h4>
+                  <ul>
+                    {{#each members}}
+                      <li>
+                        {{id}}
+                        <div>Name: <h4>{{name}}</h4></div>
+                        <p>Gender: {{gender}}</p>
+                        <p>Age: {{age}}</p>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </li>
+              {{/each}}
+            </ul>
+          </li>
+        {{/each}}
+      </ul>
+    </body>
   </article>
 </div>
