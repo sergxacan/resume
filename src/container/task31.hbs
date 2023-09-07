@@ -1,0 +1,198 @@
+{{!-- <title>{{navigation.title}}</title> --}}
+<main class='row gx-2'>
+  <div class='text-bg-warning col-6'>
+    <div>
+      {{#each navigation.links}}
+
+        <a href={{href}}>{{text}}</a>
+
+      {{/each}}
+      <a
+        class='btn btn-primary'
+        href={{navigation.button.href}}
+      >{{navigation.button.text}}</a>
+    </div>
+
+  </div>
+  <br />
+  <br />
+  <hr />
+
+  <h1>{{header.title}}</h1>
+  <p>{{header.description}}</p>
+  <a
+    href={{header.button.link}}
+    class='btn btn-primary col-2'
+  >{{header.button.text}}</a>
+  <br />
+  <br />
+
+  <hr />
+
+  <section class='row'>
+
+    <h2>{{city.title}}</h2>
+
+    {{#each city.cards}}
+      <div class='card row g-4 col-5 text-bg-dark'>
+
+        <img
+          class='card-img-top'
+          src={{picture.src}}
+          alt={{picture.alt}}
+        />
+        <div class='card-body'>
+          <h3 class='card-title'>{{title}}</h3>
+          <p>{{description}}</p>
+
+          <a
+            class='btn btn-primary col-5'
+            href={{button.href}}
+          >{{button.text}}</a>
+        </div>
+      </div>
+    {{/each}}
+
+  </section>
+
+  <section>
+    <div>
+      <h2>{{winner.title}}</h2>
+      <table class='table table-bordered'>
+        <thead>
+          <tr>
+            {{#each winner.table.head}}
+              <th>{{this}}</th>
+            {{/each}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each winner.table.user}}
+            <tr>
+              <th>{{place}}</th>
+              <td>{{name}}</td>
+              <td>{{surname}}</td>
+              <td>{{nickname}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>{{gallery.title}}</h2>
+   
+
+      {{#each gallery.cards}}
+        <div class='card row col-4 '>
+
+        <div class='card-header'>{{name}}</div>
+       
+
+
+        {{#each items}}
+        <hr>
+          <div class='card-body'>{{this}}
+           
+          </div>
+          
+            
+        {{/each}}
+        
+
+</div>
+</div>
+      {{/each}}
+
+    
+  </section>
+
+  <section class="row  ">
+    <p class="display-3">{{relaxion.title}}
+
+    </p>
+   
+
+      {{#each relaxion.cards}}
+        <div class="card row col-5  g-4 text-bg-dark">
+          <div class="card-header">{{header}}</div>
+          <h4 class="card-title">{{title}}</h4>
+          <p>{{description}}</p>
+        </div>
+      {{/each}}
+   
+  </section>
+  <hr>
+  
+
+  <section class="row gx-5 gy-2 text-bg-secondary">
+   
+    <h2>{{rest.title}}</h2>
+    
+      {{#each rest.cards}}
+         <div class="col-6">
+          <div class='card-header text-center'>{{header}}</div>
+          <div class='card-body text-center'>
+          <h4 class='card-title'>{{title}}</h4>
+          <p>{{description}}</p>
+           <button class='btn btn-primary col-4' href={{button}}>Learn More</button>
+          <div
+              class='card-footer text-center'
+            >{{footer}}</div>
+          </div>
+        </div>
+      {{/each}}
+    
+    
+  </section>
+
+  <section>
+   
+    
+    <div class="display-2">{{proposition.title}}</div>
+    
+      {{#each proposition.card}}
+      <div class="card row ">
+
+        <div class="col-5 text-bg-warning">
+          <p class='card-header '>{{header}}</p>
+          <div class='card-body '>
+          <h4 class='card-title'>{{title}}</h4>
+          <p>{{description}}</p>
+          </div>
+        </div>
+        </div>
+      {{/each}}
+  
+   
+  </section>
+
+  <footer class="row">
+    
+  
+      <ul class="list-group">
+        <div class="col-3">
+        {{#each footer.navigation}}
+          <li class='list-group-item'><a href={{href}} class="btn btn-link">{{text}}</a></li>
+        {{/each}}
+        </div>
+      </ul>
+   
+    <ul class="list-group">
+      <div class="col-3">
+      {{#each footer.socialMedia}}
+        <li class='list-group-item'><a href={{link}} class="btn btn-dark">{{name}}</a></li>
+      {{/each}}
+      </div>
+    </ul>
+    <ul class="list-group">
+      <div class="col-3">
+      {{#each footer.partners}}
+        <li class='list-group-item'><a href={{link}} class="btn btn-info">{{name}}</a></li>
+      {{/each}}
+      </div>
+    </ul>
+    </div>
+  </footer>
+</main>
