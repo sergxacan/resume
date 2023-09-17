@@ -4,14 +4,21 @@
 </head>
 
 <header class='row col-12'>
-  <div class='card nav nav-tabs m-3'>
-    <div class='nav-item pt-3 pb-3'>
-      {{#each navigation.links}}
-        <a class='mx-3' href={{href}}>{{text}}</a>
-      {{/each}}
+  <div name="navigation">
+    <div class="card nav nav-tabs m-3">
+        <nav class="m-3">
+            <div class="nav">
+                {{#with navigation}}
+                {{#each links}}
+                <div class="nav-item">
+                    <a href="#" class="nav-link {{#unless href}}disabled{{/unless}}">{{text}}</a>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </nav>
+        </div>
     </div>
-
-  </div>
 </header>
 
 <section class='row'>
